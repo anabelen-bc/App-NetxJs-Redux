@@ -3,11 +3,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createUsuario } from '@/app/components/feature/datosSlice';
-import { UserRequest } from '@/app/components/models/UserModels';
+import { userrequest } from '@/app/components/models/user-models';
 import { useAppDispatch } from '../../redux/hooks';
 
 const UserForm: React.FC = () => {
-  const [formData, setFormData] = useState<UserRequest>({
+  const [formData, setFormData] = useState<userrequest>({
     nombre: '',
     estado: '',
   });

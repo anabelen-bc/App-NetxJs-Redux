@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/components/redux/store';
-import { UserResponse, UserData  } from '@/app/components/models/UserModels';
+import { UserResponse, UserData  } from '@/app/components/models/user-models';
 import { useAppDispatch } from '../../redux/hooks';
 import { fetchUsuarios } from '@/app/components/feature/datosSlice';
 

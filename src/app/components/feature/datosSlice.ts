@@ -1,25 +1,25 @@
 import { createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit';
 import intance from '../data/axios'; //Cual utilizar Instance o Axios ?????
 import {UsuarioPayload, PersonasState} from '@/app/components/redux/types'
-import { UserRequest, UserResponse, UserApiResponse, UserData  } from '../models/UserModels';
+import { userrequest, userresponse, userapiresponse, userdata  } from '../models/user-models';
 import instance from '../data/axios';
 
 
 // Acción asíncrona para crear un usuario en la API
-export const createUsuario = createAsyncThunk<UserResponse, UserRequest>(
+export const createUsuario = createAsyncThunk<userresponse, userrequest>(
   'usuarios/createUsuario',
-  async (usuario: UserRequest) => {
+  async (usuario: userrequest) => {
     const response = await intance.post('/user/guardar', usuario);
     return response.data;
   }
 );
 
 // Acción asíncrona para obtener la lista de usuarios desde la API
-export const fetchUsuarios = createAsyncThunk<UserData[], void>(
+export const fetchUsuarios = createAsyncThunk<userdata[], void>(
   'usuarios/fetchUsuarios',
   async () => {
     try {
-      const response = await instance.get<UserApiResponse>('/user/listar');
+      const response = await instance.get<userapiresponse>('/user/listar');
       console.log('Usuarios obtenidos:', response.data.users);
       return response.data.users;
     } catch (error) {
@@ -32,7 +32,7 @@ export const fetchUsuarios = createAsyncThunk<UserData[], void>(
 // Slice de Redux Toolkit
 const usuariosSlice = createSlice({
   name: 'usuarios',
-  initialState: {data: [], loading: false, error: null as string | null } as { data: UserData[], loading: boolean, error: string | null },
+  initialState: {data: [], loading: false, error: null as string | null } as { data: userdata[], loading: boolean, error: string | null },
   reducers: {},
   extraReducers: (builder) => {
     builder

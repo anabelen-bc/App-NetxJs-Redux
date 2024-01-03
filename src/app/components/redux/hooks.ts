@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch} from '@/app/components/redux/store';
 import { createUsuario, fetchUsuarios } from '@/app/components/feature/datosSlice';
-import { UserRequest, UserResponse } from '@/app/components/models/UserModels';
+import { UserRequest, UserResponse } from '@/app/components/models/user-models';
 
 
 export const useUsuariosDispatch = () => {

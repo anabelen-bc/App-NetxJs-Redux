@@ -1,25 +1,25 @@
 // UserRequest.ts
-export interface UserRequest {
+export interface userrequest {
     nombre: string;
     estado: string;
   }
   
   // UserResponse.ts
-  export interface UserResponse {
+  export interface userresponse {
     id: number,
     nombre: string;
     estado: string;
   }
 
   //Sera redundante(?
-  export interface UserData {
+  export interface userdata {
     id: number;
     nombre: string;
     estado: string;
 
   }
   
-  export interface UserApiResponse {
+  export interface userapiresponse {
     message: string;
-    users: UserData[];
+    users: userdata[];
   }
